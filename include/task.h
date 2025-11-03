@@ -1,13 +1,23 @@
-#include <string>
-
 #ifndef _TASK_H
 #define _TASK_H
 
-class Task {
-    private:
-        string title, description;
-        int priority
-}
+#include <string>
+using namespace std;
 
+class Task
+{
+private:
+    string title, description;
+    int priority;
+
+public:
+void setTitle(string title_input);
+void setDescription(string description_input);
+void setPriority(int priority_input);
+string getTitle();
+string getDescription();
+int getPriority();
+
+};
 
 #endif

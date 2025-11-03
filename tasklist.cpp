@@ -1,8 +1,14 @@
-#include "task.h"
 #include <iostream>
 #include <string>
+#include "task.h"
 
-int main() {
+using namespace std;
+
+// function signatures
+void executeActions(char c);
+
+int main() 
+{
 
     char choice = 'i';
 
@@ -16,13 +22,13 @@ int main() {
         cout << "\t s: sort task list (by something)\n";
         cin >> choice;
         cin.ignore(); //ignore trailing \n
-        executeAction(choice);
+        executeActions(choice);
     } while (choice != 'q');
 
     return 0;
 }
 
-void executeAction(char c)
+void executeActions(char c)
 {
     switch (c)
     {
