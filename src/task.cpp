@@ -28,5 +28,25 @@ void Task::setPriority(int priority_input)
     priority = priority_input;
 }
 
+string Task::getTitle()
+{
+    return title;
+}
 
+string Task::getDescription()
+{
+    return description;
+}
+
+int Task::getPriority()
+{
+    return priority;
+}
+
+void Task::displayTask()
+{
+    cout << "Title: " << title << endl;
+    cout << "Priority: " << priority << endl;
+    cout << "Description: " << description << "\n" << endl;
+}
 
