@@ -20,6 +20,7 @@ int main()
         cout << "\t e: edit a new task\n";
         cout << "\t d: delete a task\n";
         cout << "\t s: sort task list (by something)\n";
+        cout << "\t q: quit\n";
         cin >> choice;
         cin.ignore(); //ignore trailing \n
         executeActions(choice);

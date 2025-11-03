@@ -11,6 +11,8 @@ private:
     int priority;
 
 public:
+Task(); // constructor
+
 void setTitle(string title_input);
 void setDescription(string description_input);
 void setPriority(int priority_input);
