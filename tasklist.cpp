@@ -20,7 +20,7 @@ int main()
         cout << "\t e: edit a new task\n";
         cout << "\t d: delete a task\n";
         cout << "\t s: sort task list (by something)\n";
-        cout << "\t q: quit\n";
+        cout << "\t q: quit\n\n";
         cin >> choice;
         cin.ignore(); //ignore trailing \n
         executeActions(choice);
@@ -34,7 +34,7 @@ void executeActions(char c)
     switch (c)
     {
         case 'q':
-            cout << "Goodbye";
+            cout << "Goodbye\n";
             break;
         default: cout << c << " is an invalid input!\n";
     }
