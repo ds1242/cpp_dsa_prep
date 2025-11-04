@@ -31,8 +31,23 @@ int main()
 
 void executeActions(char c)
 {
+    string title_input;
+    string description;
+    int priority;
+
     switch (c)
     {
+        case 'a':
+            cout << endl << "Enter a task title: ";
+            getline(cin, title_input);
+            cout << endl << "Enter a description for the task: ";
+            getline(cin, description);
+            cout << endl << "Enter priority level: ";
+            cin >> priority;
+
+            cout << title_input << "\n";
+            cout << description << "\n";
+            cout << priority << "\n";
         case 'q':
             cout << "Goodbye\n";
             break;
