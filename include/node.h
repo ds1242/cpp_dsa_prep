@@ -8,6 +8,7 @@ class Node
 public:
     Task *task;
     Node *next;
+    Node(); // constructor
 };
 
 #endif

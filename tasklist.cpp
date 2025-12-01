@@ -1,20 +1,24 @@
 #include <iostream>
 #include <string>
 #include "task.h"
+#include "node.h"
 
 using namespace std;
 
 // function signatures
 void executeActions(char c);
+void addTask(string title_input, string description, int priority);
+
+Node* list = NULL; //global linked list
 
 int main() 
 {
 
     char choice = 'i';
+    cout << "Welcome to the Task Manager!\n\n";
 
     do
     {
-        cout << "Welcome to the Task Manager!\n\n";
         cout << "Please select an action:\n";
         cout << "\t a: add a new task\n";
         cout << "\t e: edit a task\n";
@@ -51,6 +55,7 @@ void executeActions(char c)
                 cin >> priority;
             }
 
+            addTask(title_input, description, priority);
 
             break;
         case 'q':
@@ -66,4 +71,6 @@ void addTask(string title_input, string description, int priority)
     newTask->setTitle(title_input);
     newTask->setDescription(description);
     newTask->setPriority(priority);
+
+    newTask->displayTask();
 }
