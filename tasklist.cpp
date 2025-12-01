@@ -8,6 +8,7 @@ using namespace std;
 // function signatures
 void executeActions(char c);
 void addTask(string title_input, string description, int priority);
+void listTasks();
 
 Node* list = NULL; //global linked list
 
@@ -67,10 +68,11 @@ void executeActions(char c)
 
 void addTask(string title_input, string description, int priority)
 {
-    Task* newTask = new Task();
-    newTask->setTitle(title_input);
-    newTask->setDescription(description);
-    newTask->setPriority(priority);
+    Node* tempList = list; // work on a copy of the current list
+    Node* newNode = new Node();
 
-    newTask->displayTask();
+    Task* newTask = new Task(title_input, description, priority);
+
+    newNode->task = newTask;
+    newNode->next = list;
 }

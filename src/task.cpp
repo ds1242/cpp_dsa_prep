@@ -13,18 +13,10 @@ Task::Task()
     description = "A description is needed";
 }
 
-void Task::setTitle(string title_input)
+Task::Task(string title_input, string description_input, int priority_input)
 {
     title = title_input;
-}
-
-void Task::setDescription(string description_input)
-{
     description = description_input;
-}
-
-void Task::setPriority(int priority_input)
-{
     priority = priority_input;
 }
 
