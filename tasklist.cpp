@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-// #include "task.h"
+#include "task.h"
 
 using namespace std;
 
@@ -17,7 +17,8 @@ int main()
         cout << "Welcome to the Task Manager!\n\n";
         cout << "Please select an action:\n";
         cout << "\t a: add a new task\n";
-        cout << "\t e: edit a new task\n";
+        cout << "\t e: edit a task\n";
+        cout << "\t l: list tasks\n";
         cout << "\t d: delete a task\n";
         cout << "\t s: sort task list (by something)\n";
         cout << "\t q: quit\n\n";
@@ -34,6 +35,7 @@ void executeActions(char c)
     string title_input;
     string description;
     int priority;
+    Task* newTask = NULL;
 
     switch (c)
     {
@@ -49,13 +51,19 @@ void executeActions(char c)
                 cin >> priority;
             }
 
-            cout << title_input << "\n";
-            cout << description << "\n";
-            cout << priority << "\n";
+
             break;
         case 'q':
             cout << "Goodbye\n";
             break;
         default: cout << c << " is an invalid input!\n";
     }
+}
+
+void addTask(string title_input, string description, int priority)
+{
+    Task* newTask = new Task();
+    newTask->setTitle(title_input);
+    newTask->setDescription(description);
+    newTask->setPriority(priority);
 }
