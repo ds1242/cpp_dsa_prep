@@ -37,8 +37,8 @@ int Task::getPriority()
 
 void Task::displayTask()
 {
-    cout << "Title: " << title << endl;
-    cout << "Priority: " << priority << endl;
-    cout << "Description: " << description << "\n" << endl;
+    cout << "Title: " << getTitle() << endl;
+    cout << "Priority: " << getPriority() << endl;
+    cout << "Description: " << getDescription() << "\n" << endl;
 }
 
