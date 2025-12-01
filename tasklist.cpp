@@ -59,6 +59,9 @@ void executeActions(char c)
             addTask(title_input, description, priority);
 
             break;
+        case 'l':
+            listTasks();
+            break;
         case 'q':
             cout << "Goodbye\n";
             break;
@@ -75,4 +78,15 @@ void addTask(string title_input, string description, int priority)
 
     newNode->task = newTask;
     newNode->next = list;
+}
+
+void listTasks()
+{
+    Node* tempList = list;
+    
+    while(tempList != NULL) 
+    {
+        tempList->task->displayTask();
+        tempList = tempList->next;
+    }
 }
