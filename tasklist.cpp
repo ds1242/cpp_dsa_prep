@@ -1,23 +1,29 @@
 #include <iostream>
 #include <string>
-// #include "task.h"
+#include "task.h"
+#include "node.h"
 
 using namespace std;
 
 // function signatures
 void executeActions(char c);
+void addTask(string title_input, string description, int priority);
+void listTasks();
+
+Node* list = NULL; //global linked list
 
 int main() 
 {
 
     char choice = 'i';
+    cout << "Welcome to the Task Manager!\n\n";
 
     do
     {
-        cout << "Welcome to the Task Manager!\n\n";
         cout << "Please select an action:\n";
         cout << "\t a: add a new task\n";
-        cout << "\t e: edit a new task\n";
+        cout << "\t e: edit a task\n";
+        cout << "\t l: list tasks\n";
         cout << "\t d: delete a task\n";
         cout << "\t s: sort task list (by something)\n";
         cout << "\t q: quit\n\n";
@@ -34,6 +40,7 @@ void executeActions(char c)
     string title_input;
     string description;
     int priority;
+    Task* newTask = NULL;
 
     switch (c)
     {
@@ -49,13 +56,23 @@ void executeActions(char c)
                 cin >> priority;
             }
 
-            cout << title_input << "\n";
-            cout << description << "\n";
-            cout << priority << "\n";
+            addTask(title_input, description, priority);
+
             break;
         case 'q':
             cout << "Goodbye\n";
             break;
         default: cout << c << " is an invalid input!\n";
     }
+}
+
+void addTask(string title_input, string description, int priority)
+{
+    Node* tempList = list; // work on a copy of the current list
+    Node* newNode = new Node();
+
+    Task* newTask = new Task(title_input, description, priority);
+
+    newNode->task = newTask;
+    newNode->next = list;
 }
