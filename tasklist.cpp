@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "task.h"
+// #include "task.h"
 
 using namespace std;
 
@@ -42,12 +42,17 @@ void executeActions(char c)
             getline(cin, title_input);
             cout << endl << "Enter a description for the task: ";
             getline(cin, description);
-            cout << endl << "Enter priority level: ";
+            cout << endl << "Enter priority level(1 = High, 2 = Medium, 3 = Low): ";
             cin >> priority;
+            while(priority > 3 || priority < 1) {
+                cout << endl << "Enter priority level(1 = High, 2 = Medium, 3 = Low): ";
+                cin >> priority;
+            }
 
             cout << title_input << "\n";
             cout << description << "\n";
             cout << priority << "\n";
+            break;
         case 'q':
             cout << "Goodbye\n";
             break;
