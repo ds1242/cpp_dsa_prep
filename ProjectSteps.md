@@ -39,5 +39,3 @@ CLI Commands:
 - `remove <id>` - Remove a task
 - `complete <id>` - Mark as done
 - `quit` - Exit
-
-This gives you practice with custom classes, linked list operations (insert, delete, traverse), and parsing user input. Want me to elaborate on any part or suggest a different project?
