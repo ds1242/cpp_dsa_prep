@@ -76,14 +76,15 @@ void addTask(string title_input, string description, int priority)
 
     Task* newTask = new Task(title_input, description, priority);
 
+    newNode->next = list; 
     newNode->task = newTask;
-    newNode->next = list;
+    list = newNode;
 }
 
 void listTasks()
 {
     Node* tempList = list;
-    
+
     while(tempList != NULL) 
     {
         tempList->task->displayTask();
